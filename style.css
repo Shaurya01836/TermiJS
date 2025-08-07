@@ -1,0 +1,153 @@
+
+
+/* Theme: Dracula (Default) */
+body.theme-dracula {
+  --background: #282a36;
+  --header: #21222c;
+  --foreground: #f8f8f2;
+  --comment: #6272a4;
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --purple: #bd93f9;
+  --red: #ff5555;
+  --yellow: #f1fa8c;
+  --scrollbar: #44475a;
+}
+
+/* Theme: Light Mode */
+body.theme-light {
+  --background: #fafafa;
+  --header: #e0e0e0;
+  --foreground: #333333;
+  --comment: #999999;
+  --cyan: #00769e;
+  --green: #187c18;
+  --orange: #c46a00;
+  --pink: #d11a77;
+  --purple: #7814b3;
+  --red: #c40000;
+  --yellow: #9e7f00;
+  --scrollbar: #bbbbbb;
+}
+
+/* Theme: Nord */
+body.theme-nord {
+  --background: #2E3440;
+  --header: #3B4252;
+  --foreground: #D8DEE9;
+  --comment: #4C566A;
+  --cyan: #88C0D0;
+  --green: #A3BE8C;
+  --orange: #D08770;
+  --pink: #B48EAD;
+  --purple: #B48EAD;
+  --red: #BF616A;
+  --yellow: #EBCB8B;
+  --scrollbar: #434C5E;
+}
+
+/* ========================================================================= */
+/* BASE STYLES (These use the variables defined in the themes)               */
+/* ========================================================================= */
+
+body {
+  /* The variables are now inherited from the active theme class */
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "SF Mono", "Consolas", "Menlo", monospace;
+  font-size: 16px;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
+}
+
+#terminal-window {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: auto;
+  transition: background-color 0.3s;
+}
+
+#terminal-header {
+  background-color: var(--header);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #191a21;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+/* --- (The rest of the CSS remains largely the same) --- */
+
+.header-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background-color: var(--red); }
+.dot.yellow { background-color: var(--yellow); }
+.dot.green { background-color: var(--green); }
+
+.header-title {
+  color: var(--comment);
+  text-align: center;
+  flex-grow: 1;
+  margin-right: 50px;
+}
+
+#terminal-body {
+  padding: 10px;
+}
+
+#terminal-output {}
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.prompt-user {
+  color: var(--pink);
+  font-weight: bold;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+#terminal-input {
+  background: transparent;
+  border: none;
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  outline: none;
+  caret-color: var(--foreground);
+}
+
+#terminal-window::-webkit-scrollbar {
+  width: 8px;
+}
+#terminal-window::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar);
+  border-radius: 4px;
+}
+
+p { margin: 0 0 5px; }
+.output-error { color: var(--red); }
+.output-info { color: var(--comment); }
+.output-help { color: var(--cyan); }
+.output-command { color: var(--yellow); font-weight: bold; }
