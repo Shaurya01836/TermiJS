@@ -11,6 +11,15 @@ const commands = {
     last_n_Elements: ques2,
     emptyString : ques3,
     lowerCase : ques4,
+    stringWithoutSpaces : ques5,
+    arrayCheck : ques6,
+    //assignment 4
+    deleteFromArray : ques41,
+    noOfDigits : ques42,
+    sumOfDigit : ques43,
+    factorial : ques44,
+    //asignment 5 
+    dice : ques51,
 };
 
 

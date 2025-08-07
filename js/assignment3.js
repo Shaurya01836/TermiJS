@@ -52,16 +52,43 @@ function ques4() {
     let input = prompt("Enter a String : ")
     let index = prompt("Enter the index you want to chekc whether it is lowecase or not : ")
 
-    if (input.length == 0 || (index >= input.length || index < 0 )) {
+    if (input.length == 0 || (index >= input.length || index < 0)) {
         alert("Empty String or not a valid input !!")
     }
     else {
-       if(input[index]  == input[index].toLowerCase()){
-        alert("Yes this char is in lowecase !!")
-       }
-       else{
-         alert("NO this char is not in lowecase !!")
-       }
+        if (input[index] == input[index].toLowerCase()) {
+            alert("Yes this char is in lowecase !!")
+        }
+        else {
+            alert("NO this char is not in lowecase !!")
+        }
     }
+}
 
+function ques5() {
+    let input = prompt("Enter a String : ");
+
+    if (input) {
+        let trimmedInput = input.trim();
+        alert(`Your string: ${trimmedInput}`);
+    } else {
+
+        alert("You cancelled the prompt.");
+    }
+}
+
+function ques6() {
+    let arr = ["hello", 'a', 23, 64, 99, -6];
+    let input = prompt(`So basically i have an array : [${arr}] , now you have to write a input and we can say whether it is in the array or not !`)
+   let flag = false;
+     arr.forEach(function (value) {
+        if (value == input) {
+            flag = true;
+            }
+    })
+    if(flag){
+        alert("Yes the element is in the array")
+    }else{
+         alert("NO the element is not in the array")
+    }
 }
